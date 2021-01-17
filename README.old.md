@@ -1,4 +1,5 @@
 # shoppies
+
 UX Developer Intern &amp; Web Developer Intern Challenge - Summer 2021
 
 The Shoppies: Movie awards for entrepreneurs
@@ -23,24 +24,27 @@ Movies in search results can be added and removed from the nomination list.
 If a search result has already been nominated, disable its nominate button.
 Display a banner when the user has 5 nominations.
 
-
 Extras
 
 There is a lot to be improved on here, you can polish the required features by crafting a nicer design, or improve the app by adding new features! Choose something that you feel best showcases your passion and skills.
 
 If you need inspiration, here are examples of what you can work on. If you work on these ideas, we recommend choosing only one or two.
 
-
-  Save nomination lists if the user leaves the page
-  Animations for loading, adding/deleting movies, notifications
-  Create shareable links
+Save nomination lists if the user leaves the page
+Animations for loading, adding/deleting movies, notifications
+Create shareable links
 Submission
 
 Please submit your application via “Apply Now” and make sure you include:
-  A link to your hosted code so we can test it (Free hosting available via: Github pages, Netlify and heroku)
-  A link to your Github repository containing the code
-  Any other notes you'd like us to consider alongside the page
+A link to your hosted code so we can test it (Free hosting available via: Github pages, Netlify and heroku)
+A link to your Github repository containing the code
+Any other notes you'd like us to consider alongside the page
 
 http://www.omdbapi.com/?apikey=1f020500&?t=Where'd+You+Go+Bernadette
 
 1f020500
+
+- Add number of Search Results
+- Add Shopify styling
+- Add year
+- Add filters

@@ -5,6 +5,7 @@ import MovieList from './components/MovieList';
 import Header from './components/Header';
 import SearchBox from './components/SearchBox';
 import AddNominee from './components/AddNominee';
+import RemoveNominee from './components/RemoveNominee';
 
 
 const App = () => {
@@ -26,8 +27,20 @@ const App = () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
+  // const handleNominee = (movie) => {
+  //   const newNomineeList = [...nominees, movie];
+  //   setNominees(newNomineeList);
+  // }
+
+  // const handleRemoveNominee = (movie) => {
+  //   const newNomineeList = nominees.filter((nominee) => nominee.imdbID !== movie.imdbID);
+  //   setNominees(newNomineeList);
+  // }
+
   const handleNominee = (movie) => {
-    const newNomineeList = [...nominees, movie];
+    let newNomineeList = nominees.includes(movie) ?
+      nominees.filter((nominee) => nominee.imdbID !== movie.imdbID) :
+      [...nominees, movie];
     setNominees(newNomineeList);
   }
 
@@ -48,7 +61,10 @@ const App = () => {
         <Header heading='Nominees' />
       </div>
       <div className="row">
-        <MovieList movies={nominees} addNominee={AddNominee} />
+        <MovieList
+          movies={nominees}
+          addNominee={AddNominee}
+          handleNominee={handleNominee}/>
       </div>
     </div>
   )

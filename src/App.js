@@ -44,6 +44,12 @@ const App = () => {
           handleNominee={handleNominee}
         />
       </div>
+      <div className="row d-flex align-items-center mt-4 mb-4">
+        <Header heading='Nominees' />
+      </div>
+      <div className="row">
+        <MovieList movies={nominees} addNominee={AddNominee} />
+      </div>
     </div>
   )
 }

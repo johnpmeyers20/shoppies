@@ -5,12 +5,17 @@ const MovieList = (props) => {
   return (
     <>
       {props.movies.map((movie, index) => (
-        <div className="image-container d-flex justify-content-start m-3" key={movie.imdbID}>
-          <img src={movie.Poster} alt="movie"></img>
-          <div
-            onClick={() => props.handleNominee(movie)}
-            className="overlay d-flex align-items-center justify-content-center">
-            <AddNominee />
+        <div className="container">
+          <div className="image-container d-flex justify-content-start m-1" key={movie.imdbID}>
+            <img src={movie.Poster} alt="movie"/>
+            <div
+              onClick={() => props.handleNominee(movie)}
+              className="overlay d-flex align-items-center justify-content-center">
+              <AddNominee />
+            </div>
+          </div>
+          <div className="movie-info">
+            <h5>{movie.Title} ({movie.Year})</h5>
           </div>
         </div>
       ))}
@@ -19,3 +24,17 @@ const MovieList = (props) => {
 }
 
 export default MovieList;
+
+{/* <>
+{props.movies.map((movie, index) => (
+  <div className="image-container d-flex justify-content-start m-3" key={movie.imdbID}>
+    <img src={movie.Poster} alt="movie"></img>
+    <div
+      onClick={() => props.handleNominee(movie)}
+      className="overlay d-flex align-items-center justify-content-center">
+      <AddNominee />
+    </div>
+    <h4>{movie.Title}</h4>
+  </div>
+))}
+</> */}

@@ -45,6 +45,7 @@ http://www.omdbapi.com/?apikey=1f020500&?t=Where'd+You+Go+Bernadette
 1f020500
 
 - Add number of Search Results
+- Sort films into chronological order
 - Add Shopify styling
 - Add year
 - Add filters

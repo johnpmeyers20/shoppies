@@ -5,13 +5,12 @@ import MovieList from './components/MovieList';
 import Header from './components/Header';
 import SearchBox from './components/SearchBox';
 import AddNominee from './components/AddNominee';
-import RemoveNominee from './components/RemoveNominee';
-
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
+  const [numNoms, setNumNoms] = useState();
 
   const getMovieRequest = async (searchValue) => {
     const url = `http://www.omdbapi.com/?apikey=1f020500&s=${searchValue}`;
@@ -27,32 +26,29 @@ const App = () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
-  // const handleNominee = (movie) => {
-  //   const newNomineeList = [...nominees, movie];
-  //   setNominees(newNomineeList);
-  // }
-
-  // const handleRemoveNominee = (movie) => {
-  //   const newNomineeList = nominees.filter((nominee) => nominee.imdbID !== movie.imdbID);
-  //   setNominees(newNomineeList);
-  // }
 
   const handleNominee = (movie) => {
     let newNomineeList = nominees.includes(movie) ?
       nominees.filter((nominee) => nominee.imdbID !== movie.imdbID) :
       [...nominees, movie];
+    let newMoviesList = movies.includes(movie) ?
+      movies.filter((film) => film.imdbID !== movie.imdbID) :
+      [...movies, movie];
+    setMovies(newMoviesList);
     setNominees(newNomineeList);
+    setNumNoms(newNomineeList.length);
   }
 
   return (
     <div className="container-fluid shoppies">
       <div className="row d-flex align-items-center mt-4 mb-4">
-        <Header heading='Movies'/>
-        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
+        <Header heading='Movies' />
+        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
       <div className="row">
         <MovieList
           movies={movies}
+          numNoms={numNoms}
           addNominee={AddNominee}
           handleNominee={handleNominee}
         />

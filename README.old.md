@@ -49,3 +49,4 @@ http://www.omdbapi.com/?apikey=1f020500&?t=Where'd+You+Go+Bernadette
 - Add Shopify styling
 - Add year
 - Add filters
+- change icon and message for removal from nomination list

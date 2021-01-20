@@ -10,7 +10,6 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
-  const [numNoms, setNumNoms] = useState();
 
   const getMovieRequest = async (searchValue) => {
     const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}`;
@@ -36,7 +35,6 @@ const App = () => {
       [...movies, movie];
     setMovies(newMoviesList);
     setNominees(newNomineeList);
-    setNumNoms(newNomineeList.length);
   }
 
   return (
@@ -48,7 +46,6 @@ const App = () => {
       <div className="row">
         <MovieList
           movies={movies}
-          numNoms={numNoms}
           addNominee={AddNominee}
           handleNominee={handleNominee}
         />

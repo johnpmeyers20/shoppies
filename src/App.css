@@ -2,9 +2,28 @@ body {
   background: #141414;
   color: #FFFFFF;
 }
+
+/*///////////////////////////////////*/
+/*////////////    LOGO   ////////////*/
+/*///////////////////////////////////*/
+.top {
+  margin: 15px auto 0;
+  text-align: center;
+}
+.logo-img {
+  display: inline;
+  margin-right: 10px;
+  margin-top: -20px;
+}
 .logo-text {
   font-family: myriad-pro, sans-serif;
+  display: inline;
+  margin-top: 25px;
 }
+
+/*///////////////////////////////////*/
+/*///////////////////////////////////*/
+/*///////////////////////////////////*/
 
 .shoppies > .row {
   overflow-x: auto;

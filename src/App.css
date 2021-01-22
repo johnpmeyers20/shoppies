@@ -2,6 +2,9 @@ body {
   background: #141414;
   color: #FFFFFF;
 }
+.logo-text {
+  font-family: myriad-pro, sans-serif;
+}
 
 .shoppies > .row {
   overflow-x: auto;

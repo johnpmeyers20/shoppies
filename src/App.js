@@ -36,6 +36,19 @@ const App = () => {
       [...movies, movie];
     setMovies(newMoviesList);
     setNominees(newNomineeList);
+<<<<<<< HEAD
+=======
+  }
+
+  const addNominee = (movie) => {
+    let newNomineeList = [...nominees, movie];
+    setNominees(newNomineeList);
+  }
+
+  const removeNominee = (movie) => {
+    let newNomineeList = nominees.filter(film => film.imdbID !== movie.imdbID);
+    setNominees(newNomineeList);
+>>>>>>> 5636668963fc8c930f44513fa795c110ec21ccd3
   }
 
   return (

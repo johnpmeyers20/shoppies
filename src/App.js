@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Top from './components/Top';
 import MovieList from './components/MovieList';
 import Header from './components/Header';
 import SearchBox from './components/SearchBox';
@@ -41,8 +42,19 @@ const App = () => {
     setNominees(newNomineeList);
   }
 
+  // const addNominee = (movie) => {
+  //   let newNomineeList = [...nominees, movie];
+  //   setNominees(newNomineeList);
+  // }
+
+  // const removeNominee = (movie) => {
+  //   let newNomineeList = nominees.filter(film => film.imdbID !== movie.imdbID);
+  //   setNominees(newNomineeList);
+  // }
+
   return (
     <div className="container-fluid shoppies">
+      <Top />
       <div className="row d-flex align-items-center mt-4 mb-4">
         <Header heading='Movies' />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />

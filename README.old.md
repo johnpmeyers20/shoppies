@@ -50,3 +50,8 @@ http://www.omdbapi.com/?apikey=1f020500&?t=Where'd+You+Go+Bernadette
 - Add year
 - Add filters
 - change icon and message for removal from nomination list
+
+Colors
+- Headers: #004c3f;
+- Light Background-color: #fbf7ed;
+- Dark Background-color: #004C3F

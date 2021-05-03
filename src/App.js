@@ -5,7 +5,8 @@ import Top from './components/Top';
 import MovieList from './components/MovieList';
 import Header from './components/Header';
 import SearchBox from './components/SearchBox';
-import AddNominee from './components/AddNominee';
+import NomineeList from './components/NomineeList';
+// import AddNominee from './components/AddNominee';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -31,7 +32,7 @@ const App = () => {
 
 
   const handleNominee = (movie) => {
-    // console.log('handleNominee');
+    console.log('handleNominee');
     let newNomineeList = nominees.includes(movie) ?
       nominees.filter((nominee) => nominee.imdbID !== movie.imdbID) :
       [...nominees, movie];
@@ -62,7 +63,7 @@ const App = () => {
       <div className="row">
         <MovieList
           movies={movies}
-          addNominee={AddNominee}
+          // addNominee={AddNominee}
           handleNominee={handleNominee}
         />
       </div>
@@ -70,9 +71,9 @@ const App = () => {
         <Header heading='Nominees' />
       </div>
       <div className="row d-inline-flex">
-        <MovieList
-          movies={nominees}
-          addNominee={AddNominee}
+        <NomineeList
+          nominees={nominees}
+          // addNominee={AddNominee}
           handleNominee={handleNominee}/>
       </div>
     </div>

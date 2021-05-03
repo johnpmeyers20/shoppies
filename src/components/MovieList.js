@@ -2,32 +2,36 @@ import React from 'react';
 
 
 const MovieList = (props) => {
-  const AddNominee = props.addNomComp;
-  const RemoveNominee = props.removeNomComp;
+  // const AddNominee = props.addNomComp;
+  // const RemoveNominee = props.removeNomComp;
   const nominees = props.nominees;
 
-  const addOrRemove = (movie) => {
-    console.table(nominees);
-    console.log('addOrRemove entered');
-    if (nominees.includes(movie)) {
-      console.log('if entered');
-      return <RemoveNominee />;
-    }
-    else {
-      return <AddNominee />;
-    }
-  };
+  console.log('MovieList nominees', nominees);
+
+  // const addOrRemove = (movie) => {
+  //   console.table(nominees);
+  //   console.log('addOrRemove entered');
+  //   if (nominees.includes(movie)) {
+  //     console.log('if entered');
+  //     // return <RemoveNominee />;
+  //   }
+  //   else {
+  //     // return <AddNominee />;
+  //   }
+  // };
 
   return (
     <>
       {props.movies.map((movie, index) => (
-        <div className="container">
-          <div className="image-container d-flex justify-content-start m-1" key={movie.imdbID}>
+        <div className="container" key={movie.imdbID}>
+          <div className="image-container d-flex justify-content-start m-1">
             <img src={movie.Poster} alt="movie" />
             <div
-              onClick={() => props.handleAddNom(movie)}
+              // onClick={() => props.handleAddNom(movie)}
+              onClick={() => props.handleNominee(movie)}
               className="overlay d-flex align-items-center justify-content-center">
-              {addOrRemove(movie)}
+              {/* {addOrRemove(movie)} */}
+              {/* {nominees} */}
             </div>
           </div>
           <div className="movie-info">

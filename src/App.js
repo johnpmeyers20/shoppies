@@ -16,17 +16,21 @@ const App = () => {
     const res = await fetch(url);
     const resJson = await res.json();
 
+    // console.log('getMovieRequest');
+
     if (resJson.Search) {
       setMovies(resJson.Search);
     }
   }
 
   useEffect(() => {
+    // console.log('useEffect');
     getMovieRequest(searchValue);
   }, [searchValue]);
 
 
   const handleNominee = (movie) => {
+    // console.log('handleNominee');
     let newNomineeList = nominees.includes(movie) ?
       nominees.filter((nominee) => nominee.imdbID !== movie.imdbID) :
       [...nominees, movie];
@@ -53,7 +57,7 @@ const App = () => {
       <div className="row d-flex align-items-center mt-4 mb-4">
         <Header heading='Nominees' />
       </div>
-      <div className="row">
+      <div className="row d-inline-flex">
         <MovieList
           movies={nominees}
           addNominee={AddNominee}

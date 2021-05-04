@@ -21,7 +21,7 @@ const App = () => {
     if (resJson.Search) {
       const resJsonVals = resJson.Search
       const uniques = resJsonVals.filter((v,i,a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
-      console.log(uniques);
+      // console.log(uniques);
       setMovies(uniques);
     }
   }
@@ -31,28 +31,25 @@ const App = () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
-
   const handleNominee = (movie) => {
-    console.log('handleNominee');
-    let newNomineeList = nominees.includes(movie) ?
-      nominees.filter((nominee) => nominee.imdbID !== movie.imdbID) :
-      [...nominees, movie];
-    let newMoviesList = movies.includes(movie) ?
-      movies.filter((film) => film.imdbID !== movie.imdbID) :
-      [...movies, movie];
-    setMovies(newMoviesList);
-    setNominees(newNomineeList);
+    if (nominees.includes(movie)) {
+      let newNomineeList = nominees.filter(film => film.imdbID !== movie.imdbID);
+      let newMoviesList = [...movies, movie];
+      setNominees(newNomineeList);
+      setMovies(newMoviesList);
+    }
+    else {
+      if (nominees.length < 5) {
+        let newNomineeList = [...nominees, movie];
+        let newMoviesList = movies.filter(film => film.imdbID !== movie.imdbID);
+        setNominees(newNomineeList);
+        setMovies(newMoviesList);
+      }
+      else {
+        console.log('A user can only nominate 5 movies');
+      }
+    }
   }
-
-  // const addNominee = (movie) => {
-  //   let newNomineeList = [...nominees, movie];
-  //   setNominees(newNomineeList);
-  // }
-
-  // const removeNominee = (movie) => {
-  //   let newNomineeList = nominees.filter(film => film.imdbID !== movie.imdbID);
-  //   setNominees(newNomineeList);
-  // }
 
   return (
     <div className="container-fluid shoppies">

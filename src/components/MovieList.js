@@ -4,7 +4,7 @@ import React from 'react';
 const MovieList = (props) => {
   // const AddNominee = props.addNomComp;
   // const RemoveNominee = props.removeNomComp;
-  const nominees = props.nominees;
+  // const nominees = props.nominees;
 
   // console.log('MovieList nominees', nominees);
 

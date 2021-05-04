@@ -18,10 +18,11 @@ const App = () => {
     const res = await fetch(url);
     const resJson = await res.json();
 
-    // console.log('getMovieRequest');
-
     if (resJson.Search) {
-      setMovies(resJson.Search);
+      const resJsonVals = resJson.Search
+      const uniques = resJsonVals.filter((v,i,a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
+      console.log(uniques);
+      setMovies(uniques);
     }
   }
 

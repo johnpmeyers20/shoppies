@@ -6,7 +6,7 @@ const MovieList = (props) => {
   // const RemoveNominee = props.removeNomComp;
   const nominees = props.nominees;
 
-  console.log('MovieList nominees', nominees);
+  // console.log('MovieList nominees', nominees);
 
   // const addOrRemove = (movie) => {
   //   console.table(nominees);

@@ -3,7 +3,7 @@ import React from 'react';
 const NomineeList = (props) => {
   const nominees = props.nominees;
 
-  console.log('NomineeList');
+  // console.log('NomineeList');
 
   return (
     <>

@@ -8,6 +8,7 @@ import SearchBox from './components/SearchBox';
 import NomineeList from './components/NomineeList';
 import AddNominee from './components/AddNominee';
 import RemoveNominee from './components/RemoveNominee';
+import CallToAction from './components/CallToAction';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -89,6 +90,7 @@ const App = () => {
         <Header heading='Movies' />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
+      <CallToAction />
       <div className="row">
         <MovieList
           movies={movies}

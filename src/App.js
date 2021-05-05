@@ -32,23 +32,46 @@ const App = () => {
   }, [searchValue]);
 
   const handleNominee = (movie) => {
+    const removeFromArr = (arr, obj) => arr.filter(i => i.imdbID !== obj.imdbID);
+    const addToArr = (arr, obj) => [...arr, obj];
+    
+    let newNomineeList = nominees;
+    let newMovieList = movies;
+
     if (nominees.includes(movie)) {
-      let newNomineeList = nominees.filter(film => film.imdbID !== movie.imdbID);
-      let newMoviesList = [...movies, movie];
-      setNominees(newNomineeList);
-      setMovies(newMoviesList);
+      newNomineeList = removeFromArr(nominees, movie);
+      newMovieList = addToArr(movies, movie);
     }
     else {
       if (nominees.length < 5) {
-        let newNomineeList = [...nominees, movie];
-        let newMoviesList = movies.filter(film => film.imdbID !== movie.imdbID);
-        setNominees(newNomineeList);
-        setMovies(newMoviesList);
+        newNomineeList = addToArr(nominees, movie);
+        newMovieList = removeFromArr(movies, movie);
       }
       else {
-        console.log('A user can only nominate 5 movies');
+        console.log("Only 5 films can be nominated");
       }
     }
+
+    setNominees(newNomineeList);
+    setMovies(newMovieList);
+
+    // if (nominees.includes(movie)) {
+    //   let newNomineeList = nominees.filter(film => film.imdbID !== movie.imdbID);
+    //   let newMoviesList = [...movies, movie];
+    //   setNominees(newNomineeList);
+    //   setMovies(newMoviesList);
+    // }
+    // else {
+    //   if (nominees.length < 5) {
+    //     let newNomineeList = [...nominees, movie];
+    //     let newMoviesList = movies.filter(film => film.imdbID !== movie.imdbID);
+    //     setNominees(newNomineeList);
+    //     setMovies(newMoviesList);
+    //   }
+    //   else {
+    //     console.log('A user can only nominate 5 movies');
+    //   }
+    // }
   }
 
   return (

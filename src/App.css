@@ -1,6 +1,15 @@
+/* background-color: #FAF7ED;
+header-color: #014C3E;
+button-background-color: #008060;
+button-background-color:hover: #014C3E;
+background-color-white: #FAF7ED;
+text-color: #42474C; */
+
 body {
-  background: #141414;
-  color: #FFFFFF;
+  /* background: #141414; */
+  background-color: #faf7ed;
+  color: #014c3e;
+  box-sizing: border-box;
 }
 
 /*///////////////////////////////////*/
@@ -19,6 +28,7 @@ body {
   font-family: myriad-pro, sans-serif;
   display: inline;
   margin-top: 25px;
+  color: #000;
 }
 
 /*///////////////////////////////////*/
@@ -35,6 +45,8 @@ body {
   width: 300px;
   height: 450px;
   transition: transform 0.2s;
+  border: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .image-container:hover {
@@ -48,7 +60,7 @@ body {
 
 .overlay {
   position: absolute;
-  background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.8);
   width: 100%;
   transition: 0.5s ease;
   opacity: 0;
@@ -68,4 +80,11 @@ body {
 
 .block {
   display: block;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  text-align: left;
 }

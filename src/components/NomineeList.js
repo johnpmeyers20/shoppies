@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NomineeList = (props) => {
-  const nominees = props.nominees;
+  // const nominees = props.nominees;
   const RemoveNominee = props.removeNominee;
   // console.log('NomineeList');
 

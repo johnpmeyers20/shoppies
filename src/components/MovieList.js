@@ -26,7 +26,7 @@ const MovieList = (props) => {
       {props.movies.map((movie, index) => (
         <div className="container" key={movie.imdbID}>
           <div className="image-container d-flex justify-content-center m-1">
-            <img class="movie-poster" src={movie.Poster} alt="movie" />
+            <img src={movie.Poster} alt="movie" />
             <div
               onClick={() => props.handleNominee(movie)}
               className="overlay d-flex align-items-center justify-content-center">

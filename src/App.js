@@ -41,7 +41,14 @@ const App = () => {
 
     if (nominees.includes(movie)) {
       newNomineeList = removeFromArr(nominees, movie);
-      newMovieList = addToArr(movies, movie);
+      if (!movies.includes(movie)) {
+        const movieTitleArr = movie.Title.split(' ').map(i => i.toLowerCase());
+        if (movieTitleArr.includes(searchValue.toLowerCase())) {
+          newMovieList = addToArr(movies, movie);
+        }
+        console.log('movieTitle', movieTitleArr);
+        console.log('searchValue', searchValue);
+      }
     }
     else {
       if (nominees.length < 5) {

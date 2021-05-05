@@ -6,7 +6,7 @@ import MovieList from './components/MovieList';
 import Header from './components/Header';
 import SearchBox from './components/SearchBox';
 import NomineeList from './components/NomineeList';
-// import AddNominee from './components/AddNominee';
+import AddNominee from './components/AddNominee';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -86,6 +86,7 @@ const App = () => {
           movies={movies}
           // addNominee={AddNominee}
           handleNominee={handleNominee}
+          addNominee={AddNominee}
         />
       </div>
       <div className="row d-flex align-items-center mt-4 mb-4">

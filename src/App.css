@@ -40,6 +40,10 @@ body {
   flex-wrap: nowrap;
 }
 
+/*///////////////////////////////////*/
+/*///////// Image Overlay ///////////*/
+/*///////////////////////////////////*/
+
 .image-container {
   position: relative;
   width: 300px;
@@ -68,7 +72,13 @@ body {
   font-size: 20px;
   padding: 20px;
   text-align: center;
+  color: white;
 }
+
+/*///////////////////////////////////*/
+/*///////////////////////////////////*/
+/*///////////////////////////////////*/
+
 .movie-info {
   margin-top: 10px;
   padding: 10px 15px;

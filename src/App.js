@@ -7,6 +7,7 @@ import Header from './components/Header';
 import SearchBox from './components/SearchBox';
 import NomineeList from './components/NomineeList';
 import AddNominee from './components/AddNominee';
+import RemoveNominee from './components/RemoveNominee';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -96,7 +97,8 @@ const App = () => {
         <NomineeList
           nominees={nominees}
           // addNominee={AddNominee}
-          handleNominee={handleNominee}/>
+          handleNominee={handleNominee}
+          removeNominee={RemoveNominee} />
       </div>
     </div>
   )

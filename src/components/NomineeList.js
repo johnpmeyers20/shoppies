@@ -2,7 +2,7 @@ import React from 'react';
 
 const NomineeList = (props) => {
   const nominees = props.nominees;
-
+  const RemoveNominee = props.removeNominee;
   // console.log('NomineeList');
 
   return (
@@ -12,11 +12,9 @@ const NomineeList = (props) => {
           <div className="image-container d-flex justify-content-start m-1">
             <img src={nominee.Poster} alt="movie" />
             <div
-              // onClick={() => props.handleAddNom(movie)}
               onClick={() => props.handleNominee(nominee)}
               className="overlay d-flex align-items-center justify-content-center">
-              {/* {addOrRemove(movie)} */}
-              {/* {nominees} */}
+              <RemoveNominee />
             </div>
           </div>
           <div className="movie-info">

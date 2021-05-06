@@ -9,6 +9,7 @@ import NomineeList from './components/NomineeList';
 import AddNominee from './components/AddNominee';
 import RemoveNominee from './components/RemoveNominee';
 import CallToAction from './components/CallToAction';
+import Alert from './components/Alert';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -69,6 +70,7 @@ const App = () => {
   return (
     <div className="container-fluid shoppies">
       <Top />
+      {nominees.length > 4 ? <Alert /> : null}
       <div className="row d-flex align-items-center mt-4 mb-4">
         <Header heading='Movies' />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />

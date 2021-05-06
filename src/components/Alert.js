@@ -2,10 +2,10 @@ import React from 'react';
 
 const Alert = (props) => {
   return (
-    <div class="block alert alert-warning alert-dismissible fade show" role="alert">
-      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      <h1>{props.numOfNominees}</h1>
+    <div class="block alert alert-success alert-dismissible fade show" role="alert">
+      <h3><strong>Success!</strong></h3>
+      <h4>You've successfully nominated 5 films for the prestigious Shoppies Award!</h4>
+      <p>If you'd like to change things up, you can still revoke a nomination and nominate a different film.</p>
     </div>
   )
 }

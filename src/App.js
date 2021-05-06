@@ -16,7 +16,7 @@ const App = () => {
   const [nominees, setNominees] = useState([]);
 
   const getMovieRequest = async (searchValue) => {
-    const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}`;
+    const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
     const res = await fetch(url);
     const resJson = await res.json();
 
@@ -64,23 +64,6 @@ const App = () => {
     setNominees(newNomineeList);
     setMovies(newMovieList);
 
-    // if (nominees.includes(movie)) {
-    //   let newNomineeList = nominees.filter(film => film.imdbID !== movie.imdbID);
-    //   let newMoviesList = [...movies, movie];
-    //   setNominees(newNomineeList);
-    //   setMovies(newMoviesList);
-    // }
-    // else {
-    //   if (nominees.length < 5) {
-    //     let newNomineeList = [...nominees, movie];
-    //     let newMoviesList = movies.filter(film => film.imdbID !== movie.imdbID);
-    //     setNominees(newNomineeList);
-    //     setMovies(newMoviesList);
-    //   }
-    //   else {
-    //     console.log('A user can only nominate 5 movies');
-    //   }
-    // }
   }
 
   return (
@@ -94,9 +77,9 @@ const App = () => {
       <div className="row">
         <MovieList
           movies={movies}
-          // addNominee={AddNominee}
           handleNominee={handleNominee}
           addNominee={AddNominee}
+          nominees={nominees}
         />
       </div>
       <div className="row d-flex align-items-center mt-4 mb-4">
@@ -105,9 +88,9 @@ const App = () => {
       <div className="row d-inline-flex">
         <NomineeList
           nominees={nominees}
-          // addNominee={AddNominee}
           handleNominee={handleNominee}
-          removeNominee={RemoveNominee} />
+          removeNominee={RemoveNominee}
+        />
       </div>
     </div>
   )

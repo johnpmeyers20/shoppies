@@ -3,24 +3,7 @@ import React from 'react';
 
 const MovieList = (props) => {
   const AddNominee = props.addNominee;
-  // const AddNominee = props.addNomComp;
-  // const RemoveNominee = props.removeNomComp;
-  // const nominees = props.nominees;
-
-  // console.log('MovieList nominees', nominees);
-
-  // const addOrRemove = (movie) => {
-  //   console.table(nominees);
-  //   console.log('addOrRemove entered');
-  //   if (nominees.includes(movie)) {
-  //     console.log('if entered');
-  //     // return <RemoveNominee />;
-  //   }
-  //   else {
-  //     // return <AddNominee />;
-  //   }
-  // };
-
+  const nominees = props.nominees;
   return (
     <>
       {props.movies.map((movie, index) => (

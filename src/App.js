@@ -81,11 +81,12 @@ const App = () => {
     setMovies(newMovieList);
     saveToLocalStorage(newNomineeList);
   }
+  const showAlert = nominees.length > 4 ? <Alert /> : null;
 
   return (
     <div className="container-fluid shoppies">
       <Top />
-      {nominees.length > 4 ? <Alert /> : null}
+      {showAlert}
       <div className="row d-flex align-items-center mt-4 mb-4">
         <Header heading='Movies' />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />

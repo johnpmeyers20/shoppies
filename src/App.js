@@ -15,6 +15,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   const getMovieRequest = async (searchValue) => {
     const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
@@ -23,7 +24,7 @@ const App = () => {
 
     if (resJson.Search) {
       const resJsonVals = resJson.Search
-      const uniques = resJsonVals.filter((v,i,a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
+      const uniques = resJsonVals.filter((v, i, a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
       // console.log(uniques);
       setMovies(uniques);
     }
@@ -34,6 +35,18 @@ const App = () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
+  useEffect(() => {
+    const movieFavorites = JSON.parse(
+      localStorage.getItem('shoppies-favorites')
+    );
+    setFavorites(movieFavorites);
+    setNominees(movieFavorites);
+  }, []);
+
+  const saveToLocalStorage = items => {
+    localStorage.setItem('shoppies-favorites', JSON.stringify(items));
+  }
+
   const handleNominee = (movie) => {
     const removeFromArr = (arr, obj) => arr.filter(i => i.imdbID !== obj.imdbID);
     const addToArr = (arr, obj) => [...arr, obj];
@@ -43,6 +56,7 @@ const App = () => {
 
     if (nominees.includes(movie)) {
       newNomineeList = removeFromArr(nominees, movie);
+
       if (!movies.includes(movie)) {
         const movieTitleArr = movie.Title.split(' ').map(i => i.toLowerCase());
         if (movieTitleArr.includes(searchValue.toLowerCase())) {
@@ -64,7 +78,7 @@ const App = () => {
 
     setNominees(newNomineeList);
     setMovies(newMovieList);
-
+    saveToLocalStorage(newNomineeList);
   }
 
   return (
@@ -75,7 +89,12 @@ const App = () => {
         <Header heading='Movies' />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
-      <CallToAction />
+      { movies.length === 0
+        ?
+        <CallToAction />
+        :
+        null
+      }
       <div className="row">
         <MovieList
           movies={movies}

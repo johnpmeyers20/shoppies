@@ -39,6 +39,7 @@ const App = () => {
     const movieFavorites = JSON.parse(
       localStorage.getItem('shoppies-favorites')
     );
+    console.log(favorites);
     setFavorites(movieFavorites);
     setNominees(movieFavorites);
   }, []);

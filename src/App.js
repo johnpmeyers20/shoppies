@@ -17,11 +17,6 @@ const App = () => {
   const [nominees, setNominees] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
-  console.log('movies', movies);
-  console.log('searchValue', searchValue);
-  console.log('nominees', nominees);
-  console.log('favorites', favorites);
-
   const getMovieRequest = async (searchValue) => {
     const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
     const res = await fetch(url);

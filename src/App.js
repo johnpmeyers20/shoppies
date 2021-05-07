@@ -91,7 +91,7 @@ const App = () => {
       </div>
       { movies.length === 0
         ?
-          nominees.length > 0 && nominees.length < 5 ? <p>Continue nominating films by searching with the search box in the upper right-hand corner</p> : <CallToAction /> 
+          nominees.length > 0 ? <p>Welcome back! Continue nominating films by searching with the search box in the upper right-hand corner</p> : <CallToAction /> 
         :
         null
       }

@@ -17,6 +17,11 @@ const App = () => {
   const [nominees, setNominees] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
+  console.log('movies', movies);
+  console.log('searchValue', searchValue);
+  console.log('nominees', nominees);
+  console.log('favorites', favorites);
+
   const getMovieRequest = async (searchValue) => {
     const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
     const res = await fetch(url);
@@ -105,7 +110,7 @@ const App = () => {
         />
       </div>
       <div className="row d-flex align-items-center mt-4 mb-4">
-        <Header heading='Nominees' />
+        <Header heading='Nominees' noms={nominees}/>
       </div>
       <div className="row d-inline-flex">
         <NomineeList

@@ -7,7 +7,7 @@ const NomineeList = (props) => {
 
   return (
     <>
-      {props && props.nominees.map((nominee, index) => (
+      {props.nominees && props.nominees.map((nominee, index) => (
         <div className="container" key={nominee.imdbID}>
           <div className="image-container d-flex justify-content-start m-1">
             <img src={nominee.Poster} alt="movie" />

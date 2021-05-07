@@ -42,7 +42,7 @@ const App = () => {
     console.log(favorites);
     setFavorites(movieFavorites);
     setNominees(movieFavorites);
-  }, []);
+  }, [favorites]);
 
   const saveToLocalStorage = items => {
     localStorage.setItem('shoppies-favorites', JSON.stringify(items));

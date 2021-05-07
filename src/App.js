@@ -81,7 +81,7 @@ const App = () => {
     setMovies(newMovieList);
     saveToLocalStorage(newNomineeList);
   }
-  const showAlert = nominees.length > 4 ? <Alert /> : null;
+  const showAlert = nominees && nominees.length > 4 ? <Alert /> : null;
 
   return (
     <div className="container-fluid shoppies">

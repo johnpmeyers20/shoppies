@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Header = (props) => {
-  const nomNum = props.heading === "Nominees" ? '(' + props.noms.length + ')' : null;
+  const nomineesLen = props.noms.length;
+  const nomNum = props.heading === "Nominees" ? '(' + nomineesLen + ')' : null;
   return (
     <div className="col">
       <h1>{props.heading} {nomNum}</h1>

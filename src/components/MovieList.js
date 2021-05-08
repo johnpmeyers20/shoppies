@@ -10,7 +10,7 @@ const MovieList = (props) => {
         <div className="container" key={movie.imdbID}>
           <div className="image-container d-flex justify-content-center m-1">
             <img src={movie.Poster} alt="movie" />
-            {nominees && nominees.length < 5 ?
+            {nominees === [] || nominees.length < 5 ?
               <div
                 onClick={() => props.handleNominee(movie)}
                 className="overlay d-flex align-items-center justify-content-center">

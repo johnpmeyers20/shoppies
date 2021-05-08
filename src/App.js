@@ -50,7 +50,7 @@ const App = () => {
     let newNomineeList = nominees;
     let newMovieList = movies;
 
-    if (nominees.includes(movie)) {
+    if (nominees && nominees.includes(movie)) {
       newNomineeList = removeFromArr(nominees, movie);
 
       if (!movies.includes(movie)) {

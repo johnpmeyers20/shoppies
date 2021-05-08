@@ -15,7 +15,6 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
-  // const [favorites, setFavorites] = useState([]);
 
   const getMovieRequest = async (searchValue) => {
     const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
@@ -25,13 +24,11 @@ const App = () => {
     if (resJson.Search) {
       const resJsonVals = resJson.Search
       const uniques = resJsonVals.filter((v, i, a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
-      // console.log(uniques);
       setMovies(uniques);
     }
   }
 
   useEffect(() => {
-    // console.log('useEffect');
     getMovieRequest(searchValue);
   }, [searchValue]);
 
@@ -39,7 +36,6 @@ const App = () => {
     const movieFavorites = JSON.parse(
       localStorage.getItem('shoppies-favorites')
     );
-    // setFavorites(movieFavorites);
     setNominees(movieFavorites);
   }, []);
 

@@ -4,14 +4,13 @@ import React from 'react';
 const MovieList = (props) => {
   const AddNominee = props.addNominee;
   const nominees = props.nominees;
-  const nomLen = nominees.length;
   return (
     <>
       {props.movies.map((movie, index) => (
         <div className="container" key={movie.imdbID}>
           <div className="image-container d-flex justify-content-center m-1">
             <img src={movie.Poster} alt="movie" />
-            { nomLen < 5 ?
+            { nominees && nominees.length < 5 ?
               <div
                 onClick={() => props.handleNominee(movie)}
                 className="overlay d-flex align-items-center justify-content-center">

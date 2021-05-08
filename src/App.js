@@ -63,7 +63,7 @@ const App = () => {
       }
     }
     else {
-      if (nominees.length < 5) {
+      if (nominees && nominees.length < 5) {
         newNomineeList = addToArr(nominees, movie);
         newMovieList = removeFromArr(movies, movie);
       }

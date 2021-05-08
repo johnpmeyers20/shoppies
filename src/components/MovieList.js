@@ -17,7 +17,7 @@ const MovieList = (props) => {
                 <AddNominee />
               </div>
               :
-              null
+              console.log('cray cray')
             } 
           </div>
           <div className="movie-info">

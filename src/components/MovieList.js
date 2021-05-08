@@ -9,6 +9,7 @@ const MovieList = (props) => {
     <div className="container" key={movie.imdbID}>
       <div className="image-container d-flex justify-content-center m-1">
         <img src={movie.Poster} alt="movie" />
+        {console.log('noms4ya', nominees)}
         { nominees.length < 5 ?
           <div
             onClick={() => props.handleNominee(movie)}

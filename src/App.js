@@ -15,6 +15,8 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
+  console.log(nominees.length);
+  console.log(nominees);
 
   const getMovieRequest = async (searchValue) => {
     const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
@@ -32,8 +34,9 @@ const App = () => {
     const movieFavorites = JSON.parse(
       localStorage.getItem('shoppies-favorites')
     );
-    getMovieRequest(searchValue);
+    console.log('movieFavorites in useEffect 33', movieFavorites)
     setNominees(movieFavorites);
+    getMovieRequest(searchValue);
   }, [searchValue]);
 
   // useEffect(() => {
@@ -67,7 +70,8 @@ const App = () => {
       }
     }
     else {
-      if (nominees === null || nominees.length < 5) {
+      console.log('nominees71', nominees);
+      if (nominees && nominees.length < 5) {
         newNomineeList = addToArr(nominees, movie);
         newMovieList = removeFromArr(movies, movie);
       }

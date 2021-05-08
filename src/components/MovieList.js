@@ -4,7 +4,7 @@ import React from 'react';
 const MovieList = (props) => {
   const AddNominee = props.addNominee;
   const nominees = props.nominees;
-  console.log(nominees);
+  // console.log(nominees);
 
   const movieList = props.movies.map((movie, index) => (
     <div className="container" key={movie.imdbID}>

@@ -35,7 +35,7 @@ const App = () => {
       localStorage.getItem('shoppies-favorites')
     );
     console.log('movieFavorites in useEffect 33', movieFavorites)
-    setNominees(movieFavorites);
+    if (movieFavorites) setNominees(movieFavorites);
     getMovieRequest(searchValue);
   }, [searchValue]);
 

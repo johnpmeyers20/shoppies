@@ -15,7 +15,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
-  const [favorites, setFavorites] = useState([]);
+  // const [favorites, setFavorites] = useState([]);
 
   const getMovieRequest = async (searchValue) => {
     const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
@@ -39,7 +39,7 @@ const App = () => {
     const movieFavorites = JSON.parse(
       localStorage.getItem('shoppies-favorites')
     );
-    setFavorites(movieFavorites);
+    // setFavorites(movieFavorites);
     setNominees(movieFavorites);
   }, []);
 

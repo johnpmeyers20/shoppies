@@ -3,7 +3,7 @@ header-color: #014C3E;
 button-background-color: #008060;
 button-background-color:hover: #014C3E;
 background-color-white: #FAF7ED;
-text-color: ; */
+text-color: 014c3e; */
 
 body {
   /* background: #141414; */
@@ -49,6 +49,7 @@ body {
   width: 300px;
   height: 450px;
   transition: transform 0.2s;
+  border: 1px solid #014c3e;
 }
 
 .image-container:hover {

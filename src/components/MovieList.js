@@ -8,7 +8,7 @@ const MovieList = (props) => {
 
   const movieList = props.movies.map((movie, index) => (
     <div className="container" key={movie.imdbID}>
-      <div className="image-container d-flex justify-content-center m-1">
+      <div className="image-container d-flex justify-content-center m-2">
         <img src={movie.Poster} alt="movie" />
         { nominees === null || nominees.length < 5 ?
           <div

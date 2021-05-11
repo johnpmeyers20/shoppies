@@ -39,13 +39,6 @@ const App = () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
-  // useEffect(() => {
-  //   const movieFavorites = JSON.parse(
-  //     localStorage.getItem('shoppies-favorites')
-  //   );
-  //   setNominees(movieFavorites);
-  // }, []);
-
   const saveToLocalStorage = items => {
     localStorage.setItem('shoppies-favorites', JSON.stringify(items));
   }

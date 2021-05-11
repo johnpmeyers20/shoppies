@@ -10,7 +10,7 @@ const NomineeList = (props) => {
       {props.nominees && props.nominees.map((nominee, index) => (
         <div className="container" key={nominee.imdbID}>
           <div className="image-container d-flex justify-content-center m-0">
-            <img src={nominee.Poster} alt="movie" />
+            <img src={nominee.Poster} class="img-fluid" alt="movie" />
             <div
               onClick={() => props.handleNominee(nominee)}
               className="overlay d-flex align-items-center justify-content-center">

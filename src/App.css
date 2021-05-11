@@ -136,4 +136,6 @@ svg {
   top: 50%;
   transform: translate(0, -50%);
   margin-left: 10px;
+  /* remove line below when coming out of dev branch */
+  display: none;
 }

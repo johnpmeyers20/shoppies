@@ -113,13 +113,31 @@ child-div - position: absolute;
 */
 
 button {
-  border: 1px solid black;
-  background-color: #faf7ed;
-  width: 32px;
-  height: 32px;
-  border-radius: 5px;
+  display: inline-block;
+  border: none;
   padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 1050ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
+
+button:focus {
+  outline: 1px solid #fff;
+}
+
+.green {
+  background: #96bf46;
+}
+
+/*///////////////////////////////////*/
+/*///////////////////////////////////*/
+/*///////////////////////////////////*/
 
 svg {
   height: 25px;

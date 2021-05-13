@@ -15,6 +15,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
+  const [movieView, setMovieView] = useState('grid');
   console.log(nominees.length);
   console.log(nominees);
 
@@ -29,6 +30,22 @@ const App = () => {
       setMovies(uniques);
     }
   }
+
+  const handleMovieViewClick = (e) => {
+    console.log('clicked');
+    document.querySelector('.grid-view').classList.toggle('green');
+    document.querySelector('.list-view').classList.toggle('green');
+    // document.querySelector('list-view').toggleClass('green');
+  }
+
+  // if (movieView && movieView === 'grid') {
+  //   document.querySelector('grid-view').style.backgroundColor = '#014C3E';
+  //   document.querySelector('list-view').style.backgroundColor = '#FAF7ED';
+  // }
+  // else {
+  //   document.querySelector('grid-view').style.backgroundColor = '#FAF7ED';
+  //   document.querySelector('list-view').style.backgroundColor = '#014C3E';
+  // }
 
   useEffect(() => {
     const movieFavorites = JSON.parse(
@@ -84,7 +101,11 @@ const App = () => {
       <Top />
       {showAlert}
       <div className="row d-flex align-items-center mt-4 mb-4">
-        <Header heading='Movies' />
+        <Header
+          heading='Movies'
+          movieView={movieView}
+          handleClick={handleMovieViewClick}
+        />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
       { movies.length === 0

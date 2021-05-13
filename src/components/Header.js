@@ -6,7 +6,10 @@ const Header = (props) => {
   return (
     <div className="header col">
       <h1>{props.heading} {nomNum}</h1>
-      <Button />
+      <Button
+        movieView={props.movieView}
+        handleClick={props.handleClick}
+      />
     </div>
   )
 }

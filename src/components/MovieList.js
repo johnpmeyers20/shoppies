@@ -6,7 +6,7 @@ const MovieList = (props) => {
   const nominees = props.nominees;
   // console.log(nominees);
 
-  const movieList = props.movies.map((movie, index) => (
+  const movieGrid = props.movies.map((movie, index) => (
     <div className="container" key={movie.imdbID}>
       <div className="image-container d-flex justify-content-center m-2">
         <img src={movie.Poster} class="img-fluid" alt="movie" />
@@ -26,9 +26,17 @@ const MovieList = (props) => {
     </div>
   ))
 
+  const movieList = props.movies.map((movie, index) => (
+    <div>
+      {/* Fill this badboy ott manana
+        We want a simple list view of the films here
+      */}
+    </div>
+  ))
+
   return (
     <>
-      {movieList}
+      {movieGrid}
     </>
   )
 }

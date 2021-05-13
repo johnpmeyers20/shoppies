@@ -35,17 +35,7 @@ const App = () => {
     console.log('clicked');
     document.querySelector('.grid-view').classList.toggle('green');
     document.querySelector('.list-view').classList.toggle('green');
-    // document.querySelector('list-view').toggleClass('green');
   }
-
-  // if (movieView && movieView === 'grid') {
-  //   document.querySelector('grid-view').style.backgroundColor = '#014C3E';
-  //   document.querySelector('list-view').style.backgroundColor = '#FAF7ED';
-  // }
-  // else {
-  //   document.querySelector('grid-view').style.backgroundColor = '#FAF7ED';
-  //   document.querySelector('list-view').style.backgroundColor = '#014C3E';
-  // }
 
   useEffect(() => {
     const movieFavorites = JSON.parse(

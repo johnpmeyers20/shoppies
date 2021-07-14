@@ -44,7 +44,7 @@ const App = () => {
     }
     
     getMovieRequest(searchValue)
-    }, [searchValue]);
+    });
 
   const saveToLocalStorage = items => {
     localStorage.setItem('shoppies-favorites', JSON.stringify(items));

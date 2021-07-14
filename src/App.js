@@ -14,20 +14,6 @@ const App = () => {
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
 
-  const getMovieRequest = async (searchValue) => {
-    const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
-    const res = await fetch(url);
-    const resJson = await res.json();
-
-    if (resJson.Search) {
-      const resJsonVals = resJson.Search
-      const uniques = resJsonVals.filter((v, i, a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
-      const uniquesWithImgs = uniques.filter(movie => movie.Poster !== "N/A");
-      const uniquesExcludingNoms = uniquesWithImgs.filter(movie => !nominees.map(i => i.imdbID).includes(movie.imdbID));
-      setMovies(uniquesExcludingNoms);
-    }
-  }
-
   const handleMovieViewClick = (e) => {
     console.log('clicked');
     document.querySelector('.grid-view').classList.toggle('green');
@@ -35,6 +21,20 @@ const App = () => {
   }
 
   useEffect(() => {
+    const getMovieRequest = async (searchValue) => {
+      const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
+      const res = await fetch(url);
+      const resJson = await res.json();
+  
+      if (resJson.Search) {
+        const resJsonVals = resJson.Search
+        const uniques = resJsonVals.filter((v, i, a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
+        const uniquesWithImgs = uniques.filter(movie => movie.Poster !== "N/A");
+        const uniquesExcludingNoms = uniquesWithImgs.filter(movie => !nominees.map(i => i.imdbID).includes(movie.imdbID));
+        setMovies(uniquesExcludingNoms);
+      }
+    }
+
     const movieFavorites = JSON.parse(
       localStorage.getItem('shoppies-favorites')
     );
@@ -44,7 +44,7 @@ const App = () => {
     }
     
     getMovieRequest(searchValue)
-    });
+    }, [searchValue, nominees]);
 
   const saveToLocalStorage = items => {
     localStorage.setItem('shoppies-favorites', JSON.stringify(items));

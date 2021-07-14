@@ -23,7 +23,8 @@ const App = () => {
       const resJsonVals = resJson.Search
       const uniques = resJsonVals.filter((v, i, a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
       const uniquesWithImgs = uniques.filter(movie => movie.Poster !== "N/A");
-      setMovies(uniquesWithImgs);
+      const uniquesExcludingNoms = uniquesWithImgs.filter(movie => !nominees.map(i => i.imdbID).includes(movie.imdbID));
+      setMovies(uniquesExcludingNoms);
     }
   }
 
@@ -38,6 +39,7 @@ const App = () => {
       localStorage.getItem('shoppies-favorites')
     );
     console.log('movieFavorites in useEffect', movieFavorites)
+    console.log('searchValue', searchValue);
     if (movieFavorites) setNominees(movieFavorites);
     getMovieRequest(searchValue);
   }, [searchValue]);
@@ -55,7 +57,6 @@ const App = () => {
 
     if (nominees && nominees.includes(movie)) {
       newNomineeList = removeFromArr(nominees, movie);
-
       if (!movies.includes(movie)) {
         const movieTitleArr = movie.Title.split(' ').map(i => i.toLowerCase());
         if (movieTitleArr.includes(searchValue.toLowerCase())) {

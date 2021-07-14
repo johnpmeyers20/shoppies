@@ -35,9 +35,9 @@ const MovieList = (props) => {
   ))
 
   return (
-    <>
+    <div className="row">
       {movieGrid}
-    </>
+    </div>
   )
 }
 

@@ -6,7 +6,7 @@ const NomineeList = (props) => {
   // console.log('NomineeList');
 
   return (
-    <>
+    <div className="row d-inline-flex">
       {props.nominees && props.nominees.map((nominee, index) => (
         <div className="container" key={nominee.imdbID}>
           <div className="image-container d-flex justify-content-center m-0">
@@ -22,7 +22,7 @@ const NomineeList = (props) => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   )
 }
 

@@ -4,12 +4,10 @@ import './App.css';
 import Top from './components/Top';
 import MovieList from './components/MovieList';
 import Header from './components/Header';
-import SearchBox from './components/SearchBox';
 import NomineeList from './components/NomineeList';
 import AddNominee from './components/AddNominee';
 import RemoveNominee from './components/RemoveNominee';
 import CallToAction from './components/CallToAction';
-import Alert from './components/Alert';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -82,44 +80,35 @@ const App = () => {
     setMovies(newMovieList);
     saveToLocalStorage(newNomineeList);
   }
-  const showAlert = nominees && nominees.length > 4 ? <Alert /> : null;
+  // const showAlert = nominees && nominees.length > 4 ? <Alert /> : null;
 
   return (
     <div className="container-fluid shoppies">
-      <Top />
-      {showAlert}
-      <div className="row d-flex align-items-center mt-4 mb-4">
-        <Header
-          heading='Movies'
-          // movieView={movieView}
-          handleClick={handleMovieViewClick}
-        />
-        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-      </div>
+      <Top nominees={nominees}/>
+      <Header
+        heading="Movies"
+        handleClick={handleMovieViewClick}
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
       { movies.length === 0
         ?
           nominees && nominees.length > 0 ? <p>Welcome back! Continue nominating films by searching with the search box in the upper right-hand corner</p> : <CallToAction /> 
         :
         null
       }
-      <div className="row">
-        <MovieList
-          movies={movies}
-          handleNominee={handleNominee}
-          addNominee={AddNominee}
-          nominees={nominees}
-        />
-      </div>
-      <div className="row d-flex align-items-center mt-4 mb-4">
-        <Header heading='Nominees' noms={nominees}/>
-      </div>
-      <div className="row d-inline-flex">
-        <NomineeList
-          nominees={nominees}
-          handleNominee={handleNominee}
-          removeNominee={RemoveNominee}
-        />
-      </div>
+      <MovieList
+        movies={movies}
+        handleNominee={handleNominee}
+        addNominee={AddNominee}
+        nominees={nominees}
+      />
+      <Header heading='Nominees' noms={nominees}/>
+      <NomineeList
+        nominees={nominees}
+        handleNominee={handleNominee}
+        removeNominee={RemoveNominee}
+      />
     </div>
   )
 }

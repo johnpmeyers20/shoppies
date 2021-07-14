@@ -26,13 +26,13 @@ const MovieList = (props) => {
     </div>
   ))
 
-  const movieList = props.movies.map((movie, index) => (
-    <div>
-      {/* Fill this badboy ott manana
-        We want a simple list view of the films here
-      */}
-    </div>
-  ))
+  // const movieList = props.movies.map((movie, index) => (
+  //   <div>
+  //     {/* Fill this badboy ott manana
+  //       We want a simple list view of the films here
+  //     */}
+  //   </div>
+  // ))
 
   return (
     <div className="row">

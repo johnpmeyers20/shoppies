@@ -38,11 +38,13 @@ const App = () => {
     const movieFavorites = JSON.parse(
       localStorage.getItem('shoppies-favorites')
     );
-    console.log('movieFavorites in useEffect', movieFavorites)
-    console.log('searchValue', searchValue);
-    if (movieFavorites) setNominees(movieFavorites);
-    getMovieRequest(searchValue);
-  }, [searchValue]);
+
+    if (movieFavorites) {
+      setNominees(movieFavorites);
+    }
+    
+    getMovieRequest(searchValue)
+    }, [searchValue]);
 
   const saveToLocalStorage = items => {
     localStorage.setItem('shoppies-favorites', JSON.stringify(items));

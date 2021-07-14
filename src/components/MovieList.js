@@ -8,7 +8,7 @@ const MovieList = (props) => {
 
   const movieGrid = props.movies.map((movie, index) => (
     <div className="container" key={movie.imdbID}>
-      <div className="image-container d-flex justify-content-center m-2">
+      <div className="image-container d-flex justify-content-center m-0">
         <img src={movie.Poster} class="img-fluid" alt="movie" />
         { nominees === null || nominees.length < 5 ?
           <div

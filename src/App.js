@@ -15,9 +15,6 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
-  // const [movieView, setMovieView] = useState('grid');
-  console.log(nominees.length);
-  console.log(nominees);
 
   const getMovieRequest = async (searchValue) => {
     const url = `https://www.omdbapi.com/?apikey=1f020500&s=${searchValue}&type=movie`;
@@ -28,7 +25,6 @@ const App = () => {
       const resJsonVals = resJson.Search
       const uniques = resJsonVals.filter((v, i, a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
       const uniquesWithImgs = uniques.filter(movie => movie.Poster !== "N/A");
-      console.log('uniquesWithImgs', uniquesWithImgs);
       setMovies(uniquesWithImgs);
     }
   }
@@ -43,7 +39,7 @@ const App = () => {
     const movieFavorites = JSON.parse(
       localStorage.getItem('shoppies-favorites')
     );
-    console.log('movieFavorites in useEffect 33', movieFavorites)
+    console.log('movieFavorites in useEffect', movieFavorites)
     if (movieFavorites) setNominees(movieFavorites);
     getMovieRequest(searchValue);
   }, [searchValue]);
@@ -72,7 +68,7 @@ const App = () => {
       }
     }
     else {
-      console.log('nominees71', nominees);
+      console.log('nominees', nominees);
       if (nominees && nominees.length < 5) {
         newNomineeList = addToArr(nominees, movie);
         newMovieList = removeFromArr(movies, movie);

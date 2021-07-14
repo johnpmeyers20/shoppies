@@ -49,7 +49,9 @@ body {
 .image-container {
   position: relative;
   width: 250px;
-  height: auto;
+  height: 372px;
+  overflow: hidden;
+  display: inline-block;
   transition: transform 0.2s;
   border: 1px solid #014c3e;
 }
@@ -74,6 +76,10 @@ body {
   padding: 20px;
   text-align: center;
   color: white;
+}
+
+.img-fluid {
+  width: 100%;
 }
 
 /*///////////////////////////////////*/

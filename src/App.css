@@ -48,8 +48,10 @@ body {
 
 .image-container {
   position: relative;
-  width: 250px;
-  height: 372px;
+  /* width: 250px;
+  height: 378px; */
+  width: 15em;
+  height: 23em;
   overflow: hidden;
   display: inline-block;
   transition: transform 0.2s;

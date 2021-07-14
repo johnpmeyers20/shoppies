@@ -7,7 +7,7 @@ const Header = (props) => {
     <div className="header col">
       <h1>{props.heading} {nomNum}</h1>
       <Button
-        movieView={props.movieView}
+        // movieView={props.movieView}
         handleClick={props.handleClick}
       />
     </div>

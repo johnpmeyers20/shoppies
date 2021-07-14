@@ -15,7 +15,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [nominees, setNominees] = useState([]);
-  const [movieView, setMovieView] = useState('grid');
+  // const [movieView, setMovieView] = useState('grid');
   console.log(nominees.length);
   console.log(nominees);
 
@@ -27,7 +27,9 @@ const App = () => {
     if (resJson.Search) {
       const resJsonVals = resJson.Search
       const uniques = resJsonVals.filter((v, i, a) => a.map(film => film.imdbID).indexOf(v.imdbID) === i);
-      setMovies(uniques);
+      const uniquesWithImgs = uniques.filter(movie => movie.Poster !== "N/A");
+      console.log('uniquesWithImgs', uniquesWithImgs);
+      setMovies(uniquesWithImgs);
     }
   }
 
@@ -93,7 +95,7 @@ const App = () => {
       <div className="row d-flex align-items-center mt-4 mb-4">
         <Header
           heading='Movies'
-          movieView={movieView}
+          // movieView={movieView}
           handleClick={handleMovieViewClick}
         />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />

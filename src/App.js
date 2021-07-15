@@ -35,6 +35,7 @@ const App = () => {
   }
 
   useEffect(() => {
+    getMovieRequest(searchValue)
     const movieFavorites = JSON.parse(
       localStorage.getItem('shoppies-favorites')
     );
@@ -42,9 +43,7 @@ const App = () => {
     if (movieFavorites) {
       setNominees(movieFavorites);
     }
-    
-    getMovieRequest(searchValue)
-    }, [searchValue]);
+  }, [searchValue]);
 
   const saveToLocalStorage = items => {
     localStorage.setItem('shoppies-favorites', JSON.stringify(items));

@@ -166,3 +166,11 @@ svg {
   /* remove line below when coming out of dev branch */
   /* display: none; */
 }
+
+#searchBarWithButton {
+  display: flex;
+}
+#searchBarWithButton button {
+  margin-left: 10px;
+  padding: .3em 2em;
+}
